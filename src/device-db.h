@@ -80,7 +80,8 @@ Place, Suite 330, Boston, MA 02111-1307 USA
     {PCI_VENDOR_ID_ATI, 0x66a3, op, DEVICE_INFO(AMD_VEGA20)}, \
     {PCI_VENDOR_ID_ATI, 0x66a4, op, DEVICE_INFO(AMD_VEGA20)}, \
     {PCI_VENDOR_ID_ATI, 0x66a7, op, DEVICE_INFO(AMD_VEGA20)}, \
-    {PCI_VENDOR_ID_ATI, 0x66af, op, DEVICE_INFO(AMD_VEGA20)}
+    {PCI_VENDOR_ID_ATI, 0x66af, op, DEVICE_INFO(AMD_VEGA20)}, \
+    {PCI_VENDOR_ID_ATI, 0x164c, op, DEVICE_INFO(AMD_VEGA20)}
 
 #define _AMD_NAVI10(op) \
     {PCI_VENDOR_ID_ATI, 0x7310, op, DEVICE_INFO(AMD_NAVI10)}, \
@@ -90,8 +91,15 @@ Place, Suite 330, Boston, MA 02111-1307 USA
     {PCI_VENDOR_ID_ATI, 0x731a, op, DEVICE_INFO(AMD_NAVI10)}, \
     {PCI_VENDOR_ID_ATI, 0x731b, op, DEVICE_INFO(AMD_NAVI10)}, \
     {PCI_VENDOR_ID_ATI, 0x731e, op, DEVICE_INFO(AMD_NAVI10)}, \
+    {PCI_VENDOR_ID_ATI, 0x1681, op, DEVICE_INFO(AMD_NAVI10)}, \
     {PCI_VENDOR_ID_ATI, 0x731f, op, DEVICE_INFO(AMD_NAVI10)}, \
-    {PCI_VENDOR_ID_ATI, 0x1681, op, DEVICE_INFO(AMD_NAVI10)}
+    {PCI_VENDOR_ID_ATI, 0x15bf, op, DEVICE_INFO(AMD_NAVI10)}, \
+    {PCI_VENDOR_ID_ATI, 0x15dd, op, DEVICE_INFO(AMD_NAVI10)}, \
+    {PCI_VENDOR_ID_ATI, 0x15de, op, DEVICE_INFO(AMD_NAVI10)}, \
+    {PCI_VENDOR_ID_ATI, 0x15e7, op, DEVICE_INFO(AMD_NAVI10)}, \
+    {PCI_VENDOR_ID_ATI, 0x1636, op, DEVICE_INFO(AMD_NAVI10)}, \
+    {PCI_VENDOR_ID_ATI, 0x1638, op, DEVICE_INFO(AMD_NAVI10)}, \
+    {PCI_VENDOR_ID_ATI, 0x164c, op, DEVICE_INFO(AMD_NAVI10)}
 
 #define _AMD_NAVI14(op) \
     {PCI_VENDOR_ID_ATI, 0x7340, op, DEVICE_INFO(AMD_NAVI14)}, \
@@ -103,8 +111,16 @@ Place, Suite 330, Boston, MA 02111-1307 USA
     {PCI_VENDOR_ID_ATI, 0x7360, op, DEVICE_INFO(AMD_NAVI12)}, \
     {PCI_VENDOR_ID_ATI, 0x7362, op, DEVICE_INFO(AMD_NAVI12)}
 
+#define _AMD_NAVI23(op) \
+    {PCI_VENDOR_ID_ATI, 0x73ff, op, DEVICE_INFO(AMD_NAVI23)}
+
+/* 03:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Navi 23 [Radeon RX 6600/6600 XT/6600M] (rev c1)
+  vendor="0x1002", device="0x73ff"
+*/
+
 #define _AMD_ARCTURUS(op) \
     {PCI_VENDOR_ID_ATI, 0x738c, op, DEVICE_INFO(AMD_VEGA20)} //Instinct MI100
+
 
 static const struct vendor_reset_cfg vendor_reset_devices[] = {
     _AMD_POLARIS10(&amd_polaris10_ops),
@@ -115,6 +131,7 @@ static const struct vendor_reset_cfg vendor_reset_devices[] = {
     _AMD_NAVI10(&amd_navi10_ops),
     _AMD_NAVI14(&amd_navi10_ops),
     _AMD_NAVI12(&amd_navi10_ops),
+    _AMD_NAVI23(&amd_navi23_ops),
     _AMD_ARCTURUS(&amd_vega20_ops),
 
     /* end of array guard */
